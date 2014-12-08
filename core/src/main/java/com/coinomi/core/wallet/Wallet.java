@@ -1,6 +1,7 @@
 package com.coinomi.core.wallet;
 
 import com.coinomi.core.coins.CoinType;
+import com.coinomi.core.coins.ReddcoinMain;
 import com.coinomi.core.network.interfaces.TransactionEventListener;
 import com.coinomi.core.protos.Protos;
 import com.coinomi.core.wallet.exceptions.NoSuchPocketException;
@@ -106,23 +107,22 @@ final public class Wallet {
         return mnemonic;
     }
 
-    public void createCoinPocket(CoinType coin, boolean generateAllKeys,
+    public void createCoinPocket(ReddcoinMain coin, boolean generateAllKeys,
                                   @Nullable KeyParameter key) {
-        createCoinPockets(Lists.newArrayList(coin), generateAllKeys, key);
+        createCoinPockets(coin, generateAllKeys, key);
     }
 
-    public void createCoinPockets(List<CoinType> coins, boolean generateAllKeys,
+    public void createCoinPockets(ReddcoinMain coin, boolean generateAllKeys,
                                   @Nullable KeyParameter key) {
         lock.lock();
         try {
-            for (CoinType coin : coins) {
-                log.info("Creating coin pocket for {}", coin);
-                maybeCreatePocket(coin, key);
-                WalletPocket pocket = getPocket(coin);
+
+             log.info("Creating coin pocket for {}", coin);
+             maybeCreatePocket(coin, key);
+              WalletPocket pocket = getPocket(coin);
                 if (generateAllKeys && pocket != null) {
                     pocket.maybeInitializeAllKeys();
                 }
-            }
         } finally {
             lock.unlock();
         }

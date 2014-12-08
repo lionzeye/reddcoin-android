@@ -32,7 +32,7 @@ public class NavDrawerItem extends LinearLayout implements Checkable {
 
     public void setCoin(CoinType coin) {
         title.setText(coin.getName());
-        icon.setImageResource(Constants.COINS_ICONS.get(coin));
+        icon.setImageResource(Constants.COINS_ICON);
     }
 
     @Override

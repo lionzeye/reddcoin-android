@@ -122,7 +122,7 @@ final public class WalletActivity extends ActionBarActivity implements
         if (mViewPager != null && !coinType.equals(currentType)) {
             currentType = coinType;
             mTitle = coinType.getName();
-            coinIconRes = Constants.COINS_ICONS.get(coinType);
+            coinIconRes = Constants.COINS_ICON;
             AppSectionsPagerAdapter adapter = new AppSectionsPagerAdapter(this, coinType);
             mViewPager.setAdapter(adapter);
             mViewPager.setCurrentItem(INFO);
@@ -156,13 +156,7 @@ final public class WalletActivity extends ActionBarActivity implements
                     final CoinURI coinUri = new CoinURI(input);
                     CoinType scannedType = coinUri.getType();
 
-                    if (!Constants.SUPPORTED_COINS.contains(scannedType)) {
-                        String error = getResources().getString(R.string.unsupported_coin, scannedType.getName());
-                        throw new CoinURIParseException(error);
-                    } else if (!getWalletApplication().isPocketExists(scannedType)) {
-                        String error = getResources().getString(R.string.coin_not_added, scannedType.getName());
-                        throw new CoinURIParseException(error);
-                    }
+
 
                     setSendFromCoin(coinUri);
                 } catch (final CoinURIParseException e) {

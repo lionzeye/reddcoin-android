@@ -11,17 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.coinomi.core.coins.CoinType;
-import com.coinomi.core.coins.DogecoinMain;
-import com.coinomi.core.wallet.SimpleHDKeyChain;
 import com.coinomi.core.wallet.Wallet;
-import com.coinomi.core.wallet.WalletPocket;
-import com.coinomi.wallet.Configuration;
 import com.coinomi.wallet.Constants;
 import com.coinomi.wallet.R;
 import com.coinomi.wallet.WalletApplication;
 import com.coinomi.wallet.service.CoinService;
-import org.bitcoinj.crypto.DeterministicKey;
+
 import org.bitcoinj.crypto.KeyCrypterScrypt;
 
 import org.slf4j.Logger;
@@ -29,8 +24,6 @@ import org.slf4j.LoggerFactory;
 import org.spongycastle.crypto.params.KeyParameter;
 
 import java.util.ArrayList;
-
-import javax.annotation.Nullable;
 
 /**
  * Fragment that restores a wallet
@@ -110,7 +103,7 @@ public class FinalizeWalletRestorationFragment extends Fragment {
                 KeyCrypterScrypt crypter = new KeyCrypterScrypt();
                 KeyParameter aesKey = crypter.deriveKey(password);
                 wallet.encrypt(crypter, aesKey);
-                wallet.createCoinPockets(Constants.DEFAULT_COINS, true, aesKey);
+                wallet.createCoinPockets((com.coinomi.core.coins.ReddcoinMain) Constants.DEFAULT_COIN, true, aesKey);
                 getWalletApplication().setWallet(wallet);
                 getWalletApplication().saveWalletNow();
                 getWalletApplication().startBlockchainService(CoinService.ServiceMode.RESET_WALLET);

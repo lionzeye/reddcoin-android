@@ -53,53 +53,17 @@ public class Constants {
 
     // TODO move to resource files
     public static final List<CoinAddress> DEFAULT_COINS_SERVERS = ImmutableList.of(
-            new CoinAddress(BitcoinMain.get(), new ServerAddress("btc-cce-1.coinomi.net", 5001), new ServerAddress("btc-cce-2.coinomi.net", 5001)),
-            new CoinAddress(DogecoinMain.get(), new ServerAddress("doge-cce-1.coinomi.net", 5003), new ServerAddress("doge-cce-2.coinomi.net", 5003)),
-            new CoinAddress(LitecoinMain.get(), new ServerAddress("ltc-cce-1.coinomi.net", 5002), new ServerAddress("ltc-cce-2.coinomi.net", 5002)),
-            new CoinAddress(PeercoinMain.get(), new ServerAddress("ppc-cce-1.coinomi.net", 5004), new ServerAddress("ppc-cce-2.coinomi.net", 5004)),
-            new CoinAddress(ReddcoinMain.get(), new ServerAddress("rdd-cce-1.coinomi.net", 5014), new ServerAddress("rdd-cce-2.coinomi.net", 5014)),
-            new CoinAddress(NuSharesMain.get(), new ServerAddress("nsr-cce-1.coinomi.net", 5011), new ServerAddress("nsr-cce-2.coinomi.net", 5011)),
-            new CoinAddress(NuBitsMain.get(), new ServerAddress("nbt-cce-1.coinomi.net", 5012), new ServerAddress("nbt-cce-2.coinomi.net", 5012)),
-            new CoinAddress(BlackcoinMain.get(), new ServerAddress("bc-cce-1.coinomi.net", 5015), new ServerAddress("bc-cce-2.coinomi.net", 5015)),
-            new CoinAddress(NamecoinMain.get(), new ServerAddress("54.237.39.245", 5016)),
-            new CoinAddress(DarkcoinMain.get(), new ServerAddress("drk-cce-1.coinomi.net", 5013), new ServerAddress("drk-cce-2.coinomi.net", 5013))
+            new CoinAddress(ReddcoinMain.get(), new ServerAddress("rdd-cce-1.coinomi.net", 5014), new ServerAddress("rdd-cce-2.coinomi.net", 5014))
     );
 
-    public static final HashMap<CoinType, Integer> COINS_ICONS;
+    public static final Integer COINS_ICON;
     public static final HashMap<CoinType, String> COINS_BLOCK_EXPLORERS;
     static {
-        COINS_ICONS = new HashMap<CoinType, Integer>();
-        COINS_ICONS.put(CoinID.BITCOIN_MAIN.getCoinType(), R.drawable.bitcoin);
-        COINS_ICONS.put(CoinID.DOGECOIN_MAIN.getCoinType(), R.drawable.dogecoin);
-        COINS_ICONS.put(CoinID.LITECOIN_MAIN.getCoinType(), R.drawable.litecoin);
-        COINS_ICONS.put(CoinID.PEERCOIN_MAIN.getCoinType(), R.drawable.peercoin);
-        COINS_ICONS.put(CoinID.DARKCOIN_MAIN.getCoinType(), R.drawable.darkcoin);
-        COINS_ICONS.put(CoinID.REDDCOIN_MAIN.getCoinType(), R.drawable.reddcoin);
-        COINS_ICONS.put(CoinID.NUSHARES_MAIN.getCoinType(), R.drawable.nushares);
-        COINS_ICONS.put(CoinID.NUBITS_MAIN.getCoinType(), R.drawable.nubits);
-        COINS_ICONS.put(CoinID.BLACKCOIN.getCoinType(), R.drawable.blackcoin);
-        COINS_ICONS.put(CoinID.NAMECOIN_MAIN.getCoinType(), R.drawable.namecoin);
+        COINS_ICON = R.drawable.reddcoin;
 
         COINS_BLOCK_EXPLORERS = new HashMap<CoinType, String>();
-        COINS_BLOCK_EXPLORERS.put(CoinID.BITCOIN_MAIN.getCoinType(), "https://www.biteasy.com/blockchain/transactions/%s");
-        COINS_BLOCK_EXPLORERS.put(CoinID.DOGECOIN_MAIN.getCoinType(), "http://dogechain.info/tx/%s");
-        COINS_BLOCK_EXPLORERS.put(CoinID.LITECOIN_MAIN.getCoinType(), "http://ltc.blockr.io/tx/info/%s");
-        COINS_BLOCK_EXPLORERS.put(CoinID.PEERCOIN_MAIN.getCoinType(), "http://ppc.blockr.io/tx/info/%s");
-        COINS_BLOCK_EXPLORERS.put(CoinID.DARKCOIN_MAIN.getCoinType(), "https://bitinfocharts.com/darkcoin/tx/%s");
-        COINS_BLOCK_EXPLORERS.put(CoinID.NUSHARES_MAIN.getCoinType(), "http://blockexplorer.nu/transactions/%s");
-        COINS_BLOCK_EXPLORERS.put(CoinID.NUBITS_MAIN.getCoinType(), "http://blockexplorer.nu/transactions/%s");
         COINS_BLOCK_EXPLORERS.put(CoinID.REDDCOIN_MAIN.getCoinType(), "http://live.reddcoin.com/tx/%s");
-        COINS_BLOCK_EXPLORERS.put(CoinID.BLACKCOIN.getCoinType(), "http://www.blackcha.in/tx/%s");
-        COINS_BLOCK_EXPLORERS.put(CoinID.NAMECOIN_MAIN.getCoinType(), "https://explorer.namecoin.info/tx/%s");
     }
 
-    public static final CoinType DEFAULT_COIN = BitcoinMain.get();
-    public static final List<CoinType> DEFAULT_COINS = ImmutableList.of(BitcoinMain.get(),
-            DogecoinMain.get(), LitecoinMain.get());
-    public static final List<CoinType> SUPPORTED_COINS = ImmutableList.of(
-            BitcoinMain.get(), DogecoinMain.get(),
-            LitecoinMain.get(), PeercoinMain.get(),
-            NuSharesMain.get(), NuBitsMain.get(),
-            DarkcoinMain.get(), ReddcoinMain.get(),
-            BlackcoinMain.get());
+    public static final CoinType DEFAULT_COIN = ReddcoinMain.get();
 }

@@ -107,14 +107,6 @@ public class NavigationDrawerFragment extends Fragment {
         mDrawerListView.setAdapter(new NavDrawerListAdapter(getActivity(), application));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
 
-        addCoinsButton = view.findViewById(R.id.add_coins);
-        addCoinsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addCoins();
-            }
-        });
-
         return view;
     }
 

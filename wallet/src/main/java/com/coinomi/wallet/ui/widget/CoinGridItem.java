@@ -30,6 +30,6 @@ public class CoinGridItem extends LinearLayout {
 
     public void setCoin(CoinType coin) {
         title.setText(coin.getName());
-        icon.setImageResource(Constants.COINS_ICONS.get(coin));
+        icon.setImageResource(Constants.COINS_ICON);
     }
 }

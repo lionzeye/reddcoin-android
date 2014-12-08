@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import com.coinomi.core.coins.CoinType;
+import com.coinomi.core.coins.ReddcoinMain;
 import com.coinomi.wallet.Constants;
 import com.coinomi.wallet.WalletApplication;
 import com.coinomi.wallet.ui.widget.CoinGridItem;
@@ -29,7 +30,7 @@ public class CoinsListAdapter extends BaseAdapter {
 //        if (application.getWallet() != null) {
 //            return application.getWallet().getCoinTypes().size();
 //        }
-        return Constants.SUPPORTED_COINS.size();
+        return 1;
     }
 
     @Override
@@ -37,7 +38,7 @@ public class CoinsListAdapter extends BaseAdapter {
 //        if (application.getWallet() != null) {
 //            return application.getWallet().getCoinTypes().get(position);
 //        }
-        return Constants.SUPPORTED_COINS.get(position);
+        return ReddcoinMain.get();
     }
 
     @Override

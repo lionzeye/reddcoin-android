@@ -115,7 +115,7 @@ public class AddCoinsActivity extends ActionBarActivity implements SelectCoinsFr
                 if (wallet.isEncrypted() && wallet.getKeyCrypter() != null) {
                     key = wallet.getKeyCrypter().deriveKey(password);
                 }
-                wallet.createCoinPocket(type, true, key);
+                wallet.createCoinPocket((com.coinomi.core.coins.ReddcoinMain) type, true, key);
                 wallet.saveNow();
             } catch (RuntimeException e) {
                 exception = e;
