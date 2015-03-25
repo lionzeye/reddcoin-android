@@ -11,7 +11,7 @@
     android:paddingEnd="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin">
 
-    <com.coinomi.wallet.ui.widget.Amount
+    <com.reddcoin.wallet.ui.widget.Amount
         android:id="@+id/main_amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -6,6 +6,6 @@
     <item android:id="@+id/action_share"
         android:title="@string/action_share"
         app:showAsAction="ifRoom"
-        app:actionProviderClass="com.coinomi.wallet.util.ShareActionProvider"
+        app:actionProviderClass="com.reddcoin.wallet.util.ShareActionProvider"
         />
 </menu>

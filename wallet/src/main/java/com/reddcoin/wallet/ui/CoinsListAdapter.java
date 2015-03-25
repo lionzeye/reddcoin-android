@@ -1,0 +1,61 @@
+package com.reddcoin.wallet.ui;
+
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+
+import com.reddcoin.core.coins.CoinType;
+import com.reddcoin.core.coins.ReddcoinMain;
+import com.reddcoin.wallet.WalletApplication;
+import com.reddcoin.wallet.ui.widget.CoinGridItem;
+
+import javax.annotation.Nonnull;
+
+/**
+ * @author Giannis Dzegoutanis
+ */
+public class CoinsListAdapter extends BaseAdapter {
+    private final Context context;
+    private final WalletApplication application;
+
+    public CoinsListAdapter(final Context context, @Nonnull final WalletApplication application) {
+        this.context = context;
+        this.application = application;
+    }
+
+    @Override
+    public int getCount() {
+//        if (application.getWallet() != null) {
+//            return application.getWallet().getCoinTypes().size();
+//        }
+        return 1;
+    }
+
+    @Override
+    public CoinType getItem(int position) {
+//        if (application.getWallet() != null) {
+//            return application.getWallet().getCoinTypes().get(position);
+//        }
+        return ReddcoinMain.get();
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public View getView(int position, View row, ViewGroup parent) {
+        if (row == null) {
+            row = new CoinGridItem(context);
+        }
+
+        CoinType coinType = getItem(position);
+        if (coinType != null) ((CoinGridItem) row).setCoin(coinType);
+
+        return row;
+    }
+
+
+}

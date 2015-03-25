@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.coinomi.wallet.ui.RestoreFragment">
+    tools:context="com.reddcoin.wallet.ui.RestoreFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -57,7 +57,7 @@
                         android:layout_weight="1"
                         android:inputType="textMultiLine|textNoSuggestions" />
 
-                    <com.coinomi.wallet.ui.widget.QrCodeButton
+                    <com.reddcoin.wallet.ui.widget.QrCodeButton
                         android:id="@+id/scan_qr_code"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

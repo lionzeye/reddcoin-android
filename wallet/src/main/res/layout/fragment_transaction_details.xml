@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.coinomi.wallet.ui.TransactionDetailsFragment">
+    tools:context="com.reddcoin.wallet.ui.TransactionDetailsFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -39,7 +39,7 @@
                 tools:text="@string/sent_to"
                 android:textColor="@color/gray_54_sec_text_icons" />
 
-            <com.coinomi.wallet.ui.widget.TransactionAmountVisualizer
+            <com.reddcoin.wallet.ui.widget.TransactionAmountVisualizer
                 android:id="@+id/transaction_amount_visualizer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

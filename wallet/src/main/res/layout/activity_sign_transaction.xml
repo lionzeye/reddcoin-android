@@ -4,5 +4,5 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.coinomi.wallet.ui.SignTransactionActivity"
+    tools:context="com.reddcoin.wallet.ui.SignTransactionActivity"
     tools:ignore="MergeRootFrame" />
