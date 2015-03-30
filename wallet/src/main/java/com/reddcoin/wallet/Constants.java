@@ -48,14 +48,8 @@ public class Constants {
                     new ServerAddress("reddwallet.org", 50001))
     );
 
-    public static final Integer COINS_ICON;
-    public static final HashMap<CoinType, String> COINS_BLOCK_EXPLORERS;
-    static {
-        COINS_ICON = R.drawable.reddcoin;
-
-        COINS_BLOCK_EXPLORERS = new HashMap<CoinType, String>();
-        COINS_BLOCK_EXPLORERS.put(CoinID.REDDCOIN_MAIN.getCoinType(), "http://live.reddcoin.com/tx/%s");
-    }
+    public static final Integer COINS_ICON = R.drawable.reddcoin;
+    public static final String COIN_BLOCK_EXPLORER = "http://live.reddcoin.com/tx/%s";
 
     public static final CoinType DEFAULT_COIN = ReddcoinMain.get();
 }
