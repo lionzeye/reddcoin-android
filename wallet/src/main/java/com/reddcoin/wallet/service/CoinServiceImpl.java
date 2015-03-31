@@ -203,7 +203,7 @@ public class CoinServiceImpl extends Service implements CoinService {
                 wakeLock.acquire();
 
                 log.info("Creating coins clients");
-                client = new ServerClients(Constants.DEFAULT_COINS_SERVERS, wallet);
+                client = new ServerClients(Constants.COIN_SERVERS, wallet);
                 if (lastCoin != null) client.startAsync(wallet.getPocket(lastCoin));
             }
             else if (!hasEverything && client != null) {
@@ -447,7 +447,7 @@ public class CoinServiceImpl extends Service implements CoinService {
                     if (resetWallet) {
                         client.stopAllAsync();
                         lastCoin = null;
-                        client = new ServerClients(Constants.DEFAULT_COINS_SERVERS, wallet);
+                        client = new ServerClients(Constants.COIN_SERVERS, wallet);
                     } else {
                         client.setPockets(pockets, true);
                     }

@@ -1,8 +1,11 @@
 package com.reddcoin.core.network;
 
+import com.google.common.collect.ImmutableList;
+import com.reddcoin.core.coins.ReddcoinMain;
 import com.reddcoin.core.wallet.Wallet;
 import com.reddcoin.core.coins.CoinType;
 import com.reddcoin.core.wallet.WalletPocket;
+import com.reddcoin.stratumj.ServerAddress;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,13 +24,11 @@ public class ServerClients {
 
     private HashMap<CoinType, ServerClient> connections;
 
-    public ServerClients(List<CoinAddress> coins, Wallet wallet) {
-        connections = new HashMap<CoinType, ServerClient>(coins.size());
+    public ServerClients(ImmutableList<ServerAddress> serverAddresses, Wallet wallet) {
+        connections = new HashMap<CoinType, ServerClient>(serverAddresses.size());
 
-        for (CoinAddress coinAddress : coins) {
-            ServerClient client = new ServerClient(coinAddress);
-            connections.put(coinAddress.getType(), client);
-        }
+        ServerClient client = new ServerClient(serverAddresses);
+        connections.put(ReddcoinMain.get(), client);
 
         setPockets(wallet.getPockets(), false);
     }

@@ -1,5 +1,6 @@
 package com.reddcoin.core.network;
 
+import com.reddcoin.core.coins.ReddcoinMain;
 import com.reddcoin.core.network.interfaces.BlockchainConnection;
 import com.reddcoin.core.coins.CoinType;
 import com.reddcoin.core.network.interfaces.ConnectionEventListener;
@@ -108,11 +109,11 @@ public class ServerClient implements BlockchainConnection {
         }
     };
 
-    public ServerClient(CoinAddress coinAddress) {
+    public ServerClient(ImmutableList<ServerAddress> serverAddresses) {
         eventListeners = new CopyOnWriteArrayList<ListenerRegistration<ConnectionEventListener>>();
         failedAddresses = new HashSet<ServerAddress>();
-        type = coinAddress.getType();
-        addresses = ImmutableList.copyOf(coinAddress.getAddresses());
+        type = ReddcoinMain.get();
+        addresses = serverAddresses;
 
         createStratumClient();
 
