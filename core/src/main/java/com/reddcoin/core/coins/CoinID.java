@@ -14,21 +14,7 @@ import java.util.Set;
  * @author Giannis Dzegoutanis
  */
 public enum CoinID {
-    BITCOIN_MAIN(BitcoinMain.get()),
-    BITCOIN_TEST(BitcoinTest.get()),
-    LITECOIN_MAIN(LitecoinMain.get()),
-    LITECOIN_TEST(LitecoinTest.get()),
-    DOGECOIN_MAIN(DogecoinMain.get()),
-    DOGECOIN_TEST(DogecoinTest.get()),
-    REDDCOIN_MAIN(ReddcoinMain.get()),
-    PEERCOIN_MAIN(PeercoinMain.get()),
-    PEERCOIN_TEST(PeercoinTest.get()),
-    DARKCOIN_MAIN(DarkcoinMain.get()),
-    DARKCOIN_TEST(DarkcoinTest.get()),
-    NUSHARES_MAIN(NuSharesMain.get()),
-    NUBITS_MAIN(NuBitsMain.get()),
-    NAMECOIN_MAIN(NamecoinMain.get()),
-    BLACKCOIN(BlackcoinMain.get())
+    REDDCOIN_MAIN(ReddcoinMain.get())
     ;
 
     static {
